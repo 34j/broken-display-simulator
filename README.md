@@ -40,6 +40,34 @@ Install this via pip (or your favourite package manager):
 pip install broken-display-simulator
 ```
 
+## Usage
+
+The `bdsim` command below will cause annoying vertical lines to appear on the screen.
+
+```shell
+bdsim
+```
+
+Color and orientation/type can also be specified.
+
+```shell
+bdsim horizontal green
+```
+
+```shell
+bdsim dot red -x 100 -y 100
+```
+
+```shell
+> bdsim -h
+Usage: bdsim [OPTIONS] [[vertical|horizontal|dot|v|h|d]] [COLOR]
+
+Options:
+  -h, --help       Show this message and exit.
+  -x, --x INTEGER  X coordinate
+  -y, --y INTEGER  Y coordinate
+```
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
