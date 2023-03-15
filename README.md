@@ -32,6 +32,8 @@
 
 Simulates broken display.
 
+![Broken Display Simulator](https://raw.githubusercontent.com/34j/broken-display-simulator/main/docs/_static/example.png)
+
 ## Installation
 
 Install this via pip (or your favourite package manager):
@@ -40,14 +42,53 @@ Install this via pip (or your favourite package manager):
 pip install broken-display-simulator
 ```
 
+## Usage
+
+The `bdsim` command below will cause annoying vertical lines to appear on the screen.
+
+```shell
+bdsim
+```
+
+Color and orientation/type can also be specified.
+
+```shell
+bdsim horizontal green
+```
+
+```shell
+bdsim dot red -x 100 -y 100
+```
+
+```shell
+> bdsim -h
+Usage: bdsim [OPTIONS] [[vertical|horizontal|dot|v|h|d]] [COLOR]
+
+Options:
+  -h, --help       Show this message and exit.
+  -x, --x INTEGER  X coordinate
+  -y, --y INTEGER  Y coordinate
+```
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
 <!-- prettier-ignore-start -->
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
-<!-- markdownlint-enable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/34j"><img src="https://avatars.githubusercontent.com/u/55338215?v=4?s=80" width="80px;" alt="34j"/><br /><sub><b>34j</b></sub></a><br /><a href="https://github.com/34j/broken-display-simulator/commits?author=34j" title="Code">💻</a> <a href="#ideas-34j" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/34j/broken-display-simulator/commits?author=34j" title="Documentation">📖</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 <!-- prettier-ignore-end -->
 

@@ -18,17 +18,23 @@ packages = [
     { include = "broken_display_simulator", from = "src" },
 ]
 
+[tool.poetry.scripts]
+broken-display-simulator = "broken_display_simulator.__main__:main"
+bdsim = "broken_display_simulator.__main__:main"
+
 [tool.poetry.urls]
 "Bug Tracker" = "https://github.com/34j/broken-display-simulator/issues"
 "Changelog" = "https://github.com/34j/broken-display-simulator/blob/main/CHANGELOG.md"
 
 [tool.poetry.dependencies]
 python = "^3.8"
+pysimplegui = "*"
+click = "*"
 
 [tool.poetry.group.dev.dependencies]
 pre-commit = ">=3"
-pytest = "^7.0"
-pytest-cov = "^3.0"
+pytest = "*"
+pytest-cov = "*"
 
 [tool.poetry.group.docs]
 optional = true
