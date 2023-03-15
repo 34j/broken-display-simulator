@@ -32,6 +32,8 @@
 
 Simulates broken display.
 
+![Broken Display Simulator](https://raw.githubusercontent.com/34j/broken-display-simulator/main/docs/_static/example.png)
+
 ## Installation
 
 Install this via pip (or your favourite package manager):
