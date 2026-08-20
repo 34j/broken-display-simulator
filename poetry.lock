@@ -613,14 +613,14 @@ plugins = ["importlib-metadata"]
 
 [[package]]
 name = "pysimplegui"
-version = "4.60.5"
-description = "Python GUIs for Humans. Launched in 2018. It's 2022 & PySimpleGUI is an ACTIVE & supported project. Super-simple to create custom GUI's. 325+ Demo programs & Cookbook for rapid start. Extensive documentation. Main docs at www.PySimpleGUI.org. Fun & your success are the focus. Examples using Machine Learning (GUI, OpenCV Integration), Rainmeter Style Desktop Widgets, Matplotlib + Pyplot, PIL support, add GUI to command line scripts, PDF & Image Viewers. Great for beginners & advanced GUI programmers."
+version = "6.3.0.1"
+description = "Python GUIs for Humans. Launched in 2018. NEW LGPL3 Version 6 released in 2026."
 category = "main"
 optional = false
-python-versions = "*"
+python-versions = ">=3.6"
 files = [
-    {file = "PySimpleGUI-4.60.5-py3-none-any.whl", hash = "sha256:004f33311ee685a5287fad54f500f7290b40d7c806044e478b1384f85dedce64"},
-    {file = "PySimpleGUI-4.60.5.tar.gz", hash = "sha256:31014d1cc5eef1373d7e93564ff2604662645cc774a939b1f01aa253e7f9d78b"},
+    {file = "pysimplegui-6.3.0.1-py3-none-any.whl", hash = "sha256:937da4ae6dd6a93b8239aefc76f717e1f4861d4fb64cd4e9b3a5df88865520a5"},
+    {file = "pysimplegui-6.3.0.1.tar.gz", hash = "sha256:d711ac856a8c03382ecc13e58468c8d6b02c580881fc4115c770691b0db680ea"},
 ]
 
 [[package]]
