@@ -4,7 +4,7 @@ requires = [ "setuptools>=77.0.3" ]
 
 [project]
 name = "broken-display-simulator"
-version = "1.0.0"
+version = "1.0.1"
 description = "Simulates broken display."
 readme = "README.md"
 license = "CC0-1.0"
