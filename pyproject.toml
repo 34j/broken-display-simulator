@@ -25,14 +25,14 @@ classifiers = [
 ]
 dependencies = [
   "click",
-  "pysimplegui",
+  "freesimplegui",
 ]
 urls."Bug Tracker" = "https://github.com/34j/broken-display-simulator/issues"
 urls.Changelog = "https://github.com/34j/broken-display-simulator/blob/main/CHANGELOG.md"
 urls.documentation = "https://broken-display-simulator.readthedocs.io"
 urls.repository = "https://github.com/34j/broken-display-simulator"
-scripts.broken-display-simulator = "broken_display_simulator.__main__:main"
 scripts.bdsim = "broken_display_simulator.__main__:main"
+scripts.broken-display-simulator = "broken_display_simulator.__main__:main"
 
 [dependency-groups]
 dev = [
@@ -48,6 +48,9 @@ docs = [
 
 [tool.ruff]
 extend = ".venv/ruff.toml"
+
+[tool.ruff.lint]
+extend-per-file-ignores."src/broken_display_simulator/__main__.py" = ["N813"]
 
 [tool.pyproject-fmt]
 max_supported_python = "3.14"
