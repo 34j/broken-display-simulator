@@ -48,9 +48,7 @@ docs = [
 
 [tool.ruff]
 extend = ".venv/ruff.toml"
-
-[tool.ruff.lint]
-extend-per-file-ignores."src/broken_display_simulator/__main__.py" = ["N813"]
+lint.extend-per-file-ignores."src/broken_display_simulator/__main__.py" = [ "N813" ]
 
 [tool.pyproject-fmt]
 max_supported_python = "3.14"
