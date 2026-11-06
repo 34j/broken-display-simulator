@@ -1,10 +1,10 @@
 from __future__ import annotations
 
-import random
+import secrets
 from typing import Literal
 
 import click
-import PySimpleGUI as sg
+import FreeSimpleGUI as sg
 
 
 def _show(
@@ -33,10 +33,10 @@ def _show(
     )
     while True:
         try:
-            event, values = win.read(timeout=0)
-            if event in (sg.WIN_CLOSED, "Exit"):
+            event, _ = win.read(timeout=0)
+            if event in {sg.WIN_CLOSED, "Exit"}:
                 break
-        except Exception:
+        except Exception:  # noqa: BLE001  # GUI backends can fail while closing.
             break
     win.close()
 
@@ -58,6 +58,7 @@ def main(
     y: int | None = 0,
     color: str = "white",
 ) -> None:
+    """Show a broken display line or dot."""
     # abbreviations
     if type_ == "v":
         type_ = "vertical"
@@ -68,15 +69,9 @@ def main(
 
     # randomize coordinates
     if x is None:
-        if type_ == "vertical":
-            x = random.randint(0, sg.Window.get_screen_size()[0])  # nosec
-        else:
-            x = 0
+        x = secrets.randbelow(sg.Window.get_screen_size()[0]) if type_ == "vertical" else 0
     if y is None:
-        if type_ == "horizontal":
-            y = random.randint(0, sg.Window.get_screen_size()[1])  # nosec
-        else:
-            y = 0
+        y = secrets.randbelow(sg.Window.get_screen_size()[1]) if type_ == "horizontal" else 0
 
     click.echo(f"Showing window... (type={type_}, x={x}, y={y}, color={color})")
 
@@ -84,4 +79,5 @@ def main(
     _show(type_, x, y, color)
 
 
-main()
+if __name__ == "__main__":
+    main()
