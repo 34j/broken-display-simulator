@@ -1,98 +1,34 @@
-[tool.poetry]
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = ["setuptools>=77.0.3"]
+
+[project]
 name = "broken-display-simulator"
 version = "0.1.1"
 description = "Simulates broken display."
-authors = ["34j <34j.95a2p@simplelogin.com>"]
-license = "CC0 1.0 Universal"
 readme = "README.md"
-repository = "https://github.com/34j/broken-display-simulator"
-documentation = "https://broken-display-simulator.readthedocs.io"
-classifiers = [
-    "Development Status :: 2 - Pre-Alpha",
-    "Intended Audience :: Developers",
-    "Natural Language :: English",
-    "Operating System :: OS Independent",
-    "Topic :: Software Development :: Libraries",
-]
-packages = [
-    { include = "broken_display_simulator", from = "src" },
+license = "CC0-1.0"
+requires-python = ">=3.8"
+dependencies = [
+  "click",
+  "pysimplegui",
 ]
 
-[tool.poetry.scripts]
+[project.scripts]
 broken-display-simulator = "broken_display_simulator.__main__:main"
 bdsim = "broken_display_simulator.__main__:main"
 
-[tool.poetry.urls]
-"Bug Tracker" = "https://github.com/34j/broken-display-simulator/issues"
-"Changelog" = "https://github.com/34j/broken-display-simulator/blob/main/CHANGELOG.md"
-
-[tool.poetry.dependencies]
-python = "^3.8"
-pysimplegui = "*"
-click = "*"
-
-[tool.poetry.group.dev.dependencies]
-pre-commit = ">=3"
-pytest = "*"
-pytest-cov = "*"
-
-[tool.poetry.group.docs]
-optional = true
-
-[tool.poetry.group.docs.dependencies]
-myst-parser = ">=0.16"
-sphinx = ">=4.0"
-sphinx-rtd-theme = ">=1.0"
-
-[tool.semantic_release]
-branch = "main"
-version_toml = "pyproject.toml:tool.poetry.version"
-version_variable = "src/broken_display_simulator/__init__.py:__version__"
-build_command = "pip install poetry && poetry build"
+[dependency-groups]
+dev = [
+  "pytest",
+  "pytest-cov",
+]
+docs = [
+  "myst-parser",
+  "sphinx",
+  "sphinx-rtd-theme",
+]
 
 [tool.pytest.ini_options]
 addopts = "-v -Wdefault --cov=broken_display_simulator --cov-report=term-missing:skip-covered"
 pythonpath = ["src"]
-
-[tool.coverage.run]
-branch = true
-
-[tool.coverage.report]
-exclude_lines = [
-    "pragma: no cover",
-    "@overload",
-    "if TYPE_CHECKING",
-    "raise NotImplementedError",
-    'if __name__ == "__main__":',
-]
-
-[tool.isort]
-profile = "black"
-known_first_party = ["broken_display_simulator", "tests"]
-
-[tool.mypy]
-check_untyped_defs = true
-disallow_any_generics = true
-disallow_incomplete_defs = true
-disallow_untyped_defs = true
-mypy_path = "src/"
-no_implicit_optional = true
-show_error_codes = true
-warn_unreachable = true
-warn_unused_ignores = true
-exclude = [
-    'docs/.*',
-    'setup.py',
-]
-
-[[tool.mypy.overrides]]
-module = "tests.*"
-allow_untyped_defs = true
-
-[[tool.mypy.overrides]]
-module = "docs.*"
-ignore_errors = true
-
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
