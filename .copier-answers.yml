@@ -1,17 +1,18 @@
 # Changes here will be overwritten by Copier
+_commit: ee4da63
 _src_path: gh:34j/pypackage-template-fork
-user_name: 34j
-github_user: 34j
-project_name: Broken Display Simulator
-project_slug: broken-display-simulator
-module_name: broken_display_simulator
-project_short_description: Simulates broken display.
-version: 0.1.1
-open_source_license: CC0 1.0 Universal
 copyright_year: '2023'
 documentation: true
+github_user: 34j
 has_cli: true
-run_uv_sync: false
 initial_commit: false
-setup_github: false
+module_name: broken_display_simulator
+open_source_license: CC0-1.0
 open_with_editor: false
+project_name: Broken Display Simulator
+project_short_description: Simulates broken display.
+project_slug: broken-display-simulator
+run_uv_sync: false
+setup_pre_commit: false
+user_name: 34j
+version: 0.1.1

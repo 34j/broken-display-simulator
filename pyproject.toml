@@ -1,6 +1,6 @@
 [build-system]
 build-backend = "setuptools.build_meta"
-requires = ["setuptools>=77.0.3"]
+requires = [ "setuptools>=77.0.3" ]
 
 [project]
 name = "broken-display-simulator"
@@ -8,27 +8,49 @@ version = "0.1.1"
 description = "Simulates broken display."
 readme = "README.md"
 license = "CC0-1.0"
-requires-python = ">=3.8"
+authors = [
+  { name = "34j" },
+]
+requires-python = ">=3.12"
+classifiers = [
+  "Development Status :: 2 - Pre-Alpha",
+  "Intended Audience :: Developers",
+  "Natural Language :: English",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: Software Development :: Libraries",
+]
 dependencies = [
   "click",
   "pysimplegui",
 ]
-
-[project.scripts]
-broken-display-simulator = "broken_display_simulator.__main__:main"
-bdsim = "broken_display_simulator.__main__:main"
+urls."Bug Tracker" = "https://github.com/34j/broken-display-simulator/issues"
+urls.Changelog = "https://github.com/34j/broken-display-simulator/blob/main/CHANGELOG.md"
+urls.documentation = "https://broken-display-simulator.readthedocs.io"
+urls.repository = "https://github.com/34j/broken-display-simulator"
+scripts.broken-display-simulator = "broken_display_simulator.__main__:main"
+scripts.bdsim = "broken_display_simulator.__main__:main"
 
 [dependency-groups]
 dev = [
+  "coverage",
+  "packaging-34j[test]",
   "pytest",
   "pytest-cov",
+  "ty",
 ]
 docs = [
-  "myst-parser",
-  "sphinx",
-  "sphinx-rtd-theme",
+  "packaging-34j[docs]",
 ]
 
-[tool.pytest.ini_options]
-addopts = "-v -Wdefault --cov=broken_display_simulator --cov-report=term-missing:skip-covered"
-pythonpath = ["src"]
+[tool.ruff]
+extend = ".venv/ruff.toml"
+
+[tool.pyproject-fmt]
+max_supported_python = "3.14"
+
+[tool.ty]
+terminal.error-on-warning = true
